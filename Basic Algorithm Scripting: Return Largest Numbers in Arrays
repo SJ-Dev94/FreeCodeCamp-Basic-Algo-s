@@ -1,0 +1,30 @@
+Return Largest numbers in arrays
+
+function largestOfFour(arr) {
+  // You can do this!
+  /* initialized an empty array to push the (finalized) reduced array of greatest numbers into */
+  
+  let storage = [];
+ 
+
+  /* 
+    A forEach Loop on arr, with a function and it's parameter of i. We declare max to a value of Math.max 
+    and run the spread operator on the inside arrays of arr, which is set to i. we then push max into the empty 
+    array of storage
+  */
+ 
+ arr.forEach(function(i) {
+  var max = Math.max(...i);
+  storage.push(max);
+ })
+ 
+ /* 
+    Finally, we make our way out of the foreach loop to return storage, 
+    which has been updated with the values (max) pushed to it   
+ */
+ 
+ return storage;
+
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
