@@ -1,0 +1,14 @@
+// They said you should use a substring method but they didnt say you *couldnt* just use regex.. ;)
+
+/* 
+edit with explanation soon
+*/
+
+function confirmEnding(str, target) {
+
+let regex = new RegExp(target+"$");
+return regex.test(str);
+}
+
+confirmEnding("Bastian", "n");
+
