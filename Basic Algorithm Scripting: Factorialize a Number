@@ -1,0 +1,33 @@
+/*
+This is pretty much the simplest recursion problem. As we know, recursion is when a function calls itself until
+it no longer can. Right here, we are producing a function factorialize with a parameter of num. We have some basic logic
+to stop us from multiplying by 0 below the function declaration. If num does equal zero, we simply return 1. 
+Below that, we experience the magic of recursion (oooh lah lahhhh). We're calling the function factorialize(num) 
+INSIDE of the function factorialize(num) (It's like inception, dreams within dreams). To properly factorialize this, 
+we are returning factorlialize(num - 1) * (num). The reason we must do factorialize(num - 1) * num rather than
+factorialize(num) * (num - 1) is because we must continuously decrement our recursive function or else we will recieve
+a maximum call stack has been exceeded error. to visualize this... 
+
+(note: not proper syntax in any way shape or form, just visualization)
+
+factorialize(num(5)) * num {
+  factorialize(num(4) - 1) * num {
+    factorialize(num(3) - 1) * num {
+      factorialize(num(2) - 1) * num {
+        factorialize(num(1) - 1) * num {
+          factorialize(num(0) - 1) * num {
+            ***breaks out of recursion loop at this point because num = 0, returning one and consuming our function***
+            }
+           }
+          }
+         }
+        }
+       }
+*/
+
+function factorialize(num) {
+  if (num === 0) return 1;
+  return factorialize(num - 1) * (num);
+}
+
+factorialize(5);
