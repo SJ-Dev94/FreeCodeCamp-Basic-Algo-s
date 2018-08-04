@@ -1,0 +1,11 @@
+/*
+Not sure why this is really on here but I guess it's a good example of using function parameters.
+Pretty simple math, not going to explain this but here's the answer.
+*/
+
+function convertToF(celsius) {
+  let fahrenheit = celsius * 1.8 + 32;
+  return fahrenheit;
+}
+
+convertToF(30);
