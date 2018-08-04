@@ -1,6 +1,9 @@
 /*
 
-explanation coming
+We have a function findElement that has two parameters, arr, which in this case is for an array, and func, which is for
+a function defined below. We also have declared the variable num, which is set to 0. Then we have a for loop where we have a
+a variable set to If i is less than arr.length, we're running incrementing i. After this, we are assigning num to arr[i]. 
+Then we just have some simple logic. if func with num as its argument is true, simply return num. 
 
 */
 
