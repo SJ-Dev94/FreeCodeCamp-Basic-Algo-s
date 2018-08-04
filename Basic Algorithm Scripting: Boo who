@@ -1,0 +1,9 @@
+/*
+This ones an easy one. You're using typeof on bool and returning true or false. 
+This is kind of a "Gotcha!" question because it assumes you remember that typeof returns a string.
+*/
+
+function booWho(bool) {
+  return typeof bool === "boolean";
+}
+booWho(null);
