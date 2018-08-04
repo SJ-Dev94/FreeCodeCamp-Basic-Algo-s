@@ -1,31 +1,28 @@
 /*
 
-Split the string into an array
-If str.length > num
-Splice the array at num, end at str.length + 1;
-Join the array back together
-Concat “…”
-Return
+We have a function truncateString that takes 2 arguments, str (a string of your choice) and num, which represents the
+index at which we should splice the string and add "...". We define two variables here for brevities sake. X, which is declared
+as str.split('') and j which is x.length + 1. We don't need to do this but it allows it to make our if
+statements 1 liners so we're friggin doin it dudio. Now onto our logic. If x.length is equal to the value given to num 
+OR if num is greater than x.length, we're returning str as is. No changes needed. If x.length is greater than num,
+we're splicing x beginning at num, and ending at j (x.length + 1). Simple stuff eh? From here, once our logic is established
+we're simply joining together x (remember, we split it up which puts it into an array) and adding ... 
+Problem solved!
 
-2 unresolved test cases, will finish tomorrow
 */
-
-
 
 function truncateString(str, num) {
   // Clear out that junk in your trunk
   let x = str.split('');
-  let n = num;
   let j = x.length + 1;
-  if (x.length == num) { return; }
-  if (x.length > num) {
-    x.splice(n, j);
-  }    
+  
+  
+  if (x.length == num || num > x.length) { return x.join(''); }
+  if (x.length > num) { x.splice(num, j); } 
  
   return x.join('') + '...';;
 } 
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
-
 
 
