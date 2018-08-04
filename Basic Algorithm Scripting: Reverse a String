@@ -1,0 +1,11 @@
+/*
+Here we have a function reverseString with a parameter of str. Inside of this function we're returning the
+parameter that we input and we are using str.split('') to turn it into an array and split it up so we can
+call the array method reverse() on it, and then join it together.
+*/
+
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString("hello");
