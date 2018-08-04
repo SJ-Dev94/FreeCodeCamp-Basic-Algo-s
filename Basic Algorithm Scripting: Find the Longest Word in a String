@@ -1,0 +1,26 @@
+/*
+We have a function findLongestWordLength with a parameter of str to take inputs. We initialized a counter
+because we need to keep track of the current longest word. Below that we are declaring variable x to
+str.split(' ') which will take the input given to our parameter, split it up and toss it into an array.
+After that, we're running a forEach loop on x with a parameter of i. Below that we have some simple logic
+if counter is less than the length of our parameter (in this case it since we are running a loop, the parameter
+would be looping over the array of x). If this is true, we're assigning counter to i.length. Once that's done
+we just return counter inside the function. EZPZ
+
+*note* figure out why you cant use a === to assign counter to i.length
+
+*/
+
+function findLongestWordLength(str) {
+  let counter = 0;
+  let x = str.split(' ');
+  
+  x.forEach(function(i) {
+    if (counter < i.length) {
+      counter = i.length;
+     }
+  });
+  return counter;
+}
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
