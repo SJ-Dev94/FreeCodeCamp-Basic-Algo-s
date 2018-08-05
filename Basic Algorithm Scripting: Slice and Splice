@@ -1,0 +1,30 @@
+
+/* 
+
+This was a fun one. Gave me a lot of insight into how splice/slice works! From the top: we have a function frankenSplice with
+three parameters, arr1, arr2, and n. n is the position at which we add in arr1 to arr2. Inside of the function we declare three
+variables. x and y are declared as arr1.slice()/arr2.slice() to create copies of the arrays that we intend to change, 
+because the instructions clearly state that arr1 and arr2 should not be mutated. By slicing these and assigning them new 
+var's, we are creating completely new copies of these arrays. we also have let b, which is splicing y, with a start point of 
+n (our 3rd parameter of frankenSplice), an end point of 0 which signifies that the whole array should be spliced. Our third
+param is x, so this is saying that we're adding arr1.slice() to b. We also use the spread operator on x, because if we did not
+we would just be returning an array, but we really need to spread that array out into the existing array. 
+ex without spread: [1,2,3,[arr],4]
+ex with spread: [1,2,3,"hello","goodbye",4]
+NOW THE TRICKY PART, since splice returns only items that were deleted, and modifies the original array it was called on,
+we cannot call b since it would just return an empty array. We must call the original array that was modified with slice,
+in this case it is y. 
+
+*/
+
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let x = arr1.slice();
+  let y = arr2.slice();
+  let b = y.splice(n, 0, ...x );
+  return y;
+
+
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
